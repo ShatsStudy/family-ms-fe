@@ -11,15 +11,10 @@ pipeline {
               sh 'npm install'
           }
       }
-      stage ('Node version'){
-        steps{
-          sh 'node -v'
-        }
-      }
       stage ('Test'){
         steps{
           sh '''
-            $(npm bin)/ng test
+            $(npm bin)/ng test --browsers Chrome_no_sandbox
           '''
         }
       }
