@@ -11,22 +11,22 @@ pipeline {
               sh 'npm install'
           }
       }
-      stage ('Test'){
-        steps{
-          sh '''
-            $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
-          '''
-        }
-      }
-      stage ('Code quality'){
-        steps{
-          sh '$(npm bin)/ng lint'
-        }
-      }
-      stage ('Build app') {
-        steps{
-          sh '$(npm bin)/ng build --prod --build-optimizer'
-        }
-      }
+      // stage ('Test'){
+      //   steps{
+      //     sh '''
+      //       $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
+      //     '''
+      //   }
+      // }
+      // stage ('Code quality'){
+      //   steps{
+      //     sh '$(npm bin)/ng lint'
+      //   }
+      // }
+      // stage ('Build app') {
+      //   steps{
+      //     sh '$(npm bin)/ng build --prod --build-optimizer'
+      //   }
+      // }
   }
 }
