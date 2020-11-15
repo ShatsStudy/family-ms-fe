@@ -14,7 +14,6 @@ pipeline {
       stage ('Test'){
         steps{
           sh '''
-            export CHROME_BIN=/usr/bin/chromium-browser 
             $(npm bin)/ng test
           '''
         }
