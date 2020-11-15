@@ -11,21 +11,24 @@ pipeline {
               sh 'npm install'
           }
       }
+      stage ('Npde version'){
+        steps{
+          sh 'node -v'
+        }
+      }
       stage ('Test'){
         steps{
-          sh '''
-            $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
-          '''
+          sh 'ng test'
         }
       }
       stage ('Code quality'){
         steps{
-          sh '$(npm bin)/ng lint'
+          sh 'ng lint'
         }
       }
       stage ('Build app') {
         steps{
-          sh '$(npm bin)/ng build --prod --build-optimizer'
+          sh 'ng build --prod'
         }
       }
   }
