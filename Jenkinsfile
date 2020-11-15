@@ -11,6 +11,16 @@ pipeline {
               sh 'npm install'
           }
       }
+      stage ('Code quality'){
+        steps{
+          sh '$(npm bin)/ng lint'
+        }
+      }
+      stage ('Build app') {
+        steps{
+          sh '$(npm bin)/ng build --prod --build-optimizer'
+        }
+      }
       stage ('test'){
         steps{
           sh '$(npm bin)/ng test --progress false --watch false'
@@ -22,16 +32,6 @@ pipeline {
             always {
               junit "test-results.xml"
             }
-        }
-      }
-      stage ('Code quality'){
-        steps{
-          sh '$(npm bin)/ng lint'
-        }
-      }
-      stage ('Build app') {
-        steps{
-          sh '$(npm bin)/ng build --prod --build-optimizer'
         }
       }
   }
