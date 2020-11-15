@@ -11,11 +11,6 @@ pipeline {
               sh 'npm install'
           }
       }
-      stage ('Code quality'){
-        steps{
-          sh '$(npm bin)/ng lint'
-        }
-      }
       stage ('Build app') {
         steps{
           sh '$(npm bin)/ng build --prod --build-optimizer'
@@ -23,10 +18,7 @@ pipeline {
       }
       stage ('test'){
         steps{
-          sh '$(npm bin)/ng test --progress false --watch false'
-          echo 'generate test report **/dist/test-reports/*.xml'
-          junit allowEmptyResults: false, testResults: '**/test-results.xml'
-          echo 'end test & coverage'
+          sh ('./node_modules/karma/bin/karma start karma.conf.js')
         }
         post {
             always {
