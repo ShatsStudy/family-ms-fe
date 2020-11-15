@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { ContactTypesComponent } from './contact-types/contact-types.component';
 
 @NgModule({
   imports: [],
-  exports: [ContactTypesComponent],
-  declarations: [ContactTypesComponent],
+  exports: [],
+  declarations: [],
   providers: [],
 })
 
-export class AdditionalContacts {
-}
+export class AdditionalContacts {}
