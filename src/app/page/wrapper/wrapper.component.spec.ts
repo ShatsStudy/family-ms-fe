@@ -18,7 +18,6 @@ import { MenuItemComponent } from '../navbar/burger-menu/menu-item/menu-item.com
 import { UpdateAvatarComponent } from '../create-update-user-page/update-avatar/update-avatar.component';
 import { DatepickerComponent } from '../create-update-user-page/create-update-user/create-update-date/datepicker/datepicker.component';
 import { DatepickerFilterComponent } from '../filter/datepicker-filter/datepicker-filter.component';
-import { AccordionModule, BsDatepickerModule, BsDropdownModule, BsModalService, ModalModule } from 'ngx-bootstrap';
 import { CommentModalComponent } from '../comment-modal/comment-modal.component';
 import { ModalComponent } from '../modal/modal.component';
 import { SocialNetworksComponent } from '../navbar/social-networks/social-networks.component';
@@ -60,14 +59,10 @@ describe('WrapperComponent', () => {
       ],
       imports: [
                 RouterTestingModule,
-                AccordionModule.forRoot(),
                 ReactiveFormsModule,
                 FormsModule,
-                BsDatepickerModule.forRoot(),
-                BsDropdownModule.forRoot(),
                 HttpClientTestingModule,
                 HttpClientModule,
-                ModalModule.forRoot(),
                ],
       providers: [appConfigProviders]
     })

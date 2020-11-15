@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DropdownInfoComponent } from './dropdown-info.component';
-import { BsDropdownModule } from 'ngx-bootstrap';
+// import { BsDropdownModule } from 'ngx-bootstrap';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
@@ -13,7 +13,7 @@ describe('DropdownInfoComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ DropdownInfoComponent ],
       imports: [
-        BsDropdownModule.forRoot(),
+        // BsDropdownModule.forRoot(),
         HttpClientTestingModule
       ]
     })

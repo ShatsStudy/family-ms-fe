@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouterModule } from '@angular/router';
 
-import { AccordionModule, BsModalService, ModalModule } from 'ngx-bootstrap';
 
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
@@ -18,8 +17,7 @@ describe('MyProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ BsModalService ],
-      imports: [HttpClientModule, RouterTestingModule, RouterModule,  AccordionModule.forRoot(), ModalModule.forRoot() ],
+      imports: [HttpClientModule, RouterTestingModule, RouterModule ],
       declarations: [ MyProfileComponent, UserBarInfoComponent ],
       schemas: [NO_ERRORS_SCHEMA]
     })

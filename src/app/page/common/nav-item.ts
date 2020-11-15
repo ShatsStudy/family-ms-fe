@@ -5,8 +5,8 @@ export class NavItem {
   router?: string;
   rightMenu: boolean;
   burgerMenu: boolean;
-  parent: string;
-  child: string;
+  parent?: string;
+  child?: string;
   logout?: boolean;
 }
 

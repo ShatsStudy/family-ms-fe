@@ -1,4 +1,5 @@
 import { TestBed, fakeAsync, inject, async } from '@angular/core/testing';
+import { NavItem } from './nav-item';
 import { NavItemsService } from './nav-items.service';
 
 const mockNavItemsList = [
@@ -84,15 +85,15 @@ const mockNavItemsList = [
     dev: ''
   }
 ];
-const link = {
+const link: NavItem = {
   id: 'create-user',
   title: 'create user',
   current: false,
   router: 'create-user',
   rightMenu: false,
   burgerMenu: true,
-  hr: 'hr',
-  dev: ''
+  // hr: 'hr',
+  // dev: ''
 };
 const userType = 'hr';
 const menu = 'burgerMenu';
