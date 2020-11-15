@@ -1,7 +1,7 @@
 pipeline {
   agent {
       docker {
-          image 'node:6-alpine'
+          image 'node:12.19.0-alpine'
           args '-p 3000:3000'
       }
   }
@@ -11,25 +11,23 @@ pipeline {
               sh 'npm install'
           }
       }
-      stage ('Npde version'){
-        steps{
-          sh 'node -v'
-        }
-      }
       stage ('Test'){
         steps{
-          sh 'ng test'
+          sh '''
+            $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
+          '''
         }
       }
       stage ('Code quality'){
         steps{
-          sh 'ng lint'
+          sh '$(npm bin)/ng lint'
         }
       }
       stage ('Build app') {
         steps{
-          sh 'ng build --prod'
+          sh '$(npm bin)/ng build --prod --build-optimizer'
         }
       }
   }
+
 }
