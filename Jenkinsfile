@@ -14,7 +14,7 @@ pipeline {
       stage ('Test'){
         steps{
           sh '''
-            $(npm bin)/ng test --browsers Chrome_no_sandbox
+            $(npm bin)/ng test --watch=false
           '''
         }
       }
