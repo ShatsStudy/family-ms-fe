@@ -11,11 +11,16 @@ pipeline {
               sh 'npm install'
           }
       }
-      stage ('Test'){
+      stage ('test'){
         steps{
           sh '''
             $(npm bin)/ng test
           '''
+        }
+        post {
+            always {
+              junit "test-results.xml"
+            }
         }
       }
       stage ('Code quality'){
