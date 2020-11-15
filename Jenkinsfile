@@ -13,10 +13,7 @@ pipeline {
     }
     stage ('test'){
       steps{
-        sh '$(npm bin)/ng test --progress false --watch false'
-        echo 'generate test report **/dist/test-reports/*.xml'
-        junit allowEmptyResults: false, testResults: '**/test-results.xml'
-        echo 'end test & coverage'
+        sh '$(npm bin)/ng test --watch=false'
       }
     }
     stage ('Build app') {
