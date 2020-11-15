@@ -14,7 +14,7 @@ pipeline {
       stage ('test'){
         steps{
           sh '''
-            $(npm bin)/ng test
+            $(npm bin)/--progress false --watch false
           '''
         }
         post {
