@@ -30,6 +30,7 @@
     "core-js": "^3.6.5",
     "eslint": "^7.10.0",
     "font-awesome": "^4.7.0",
+    "gulp": "^4.0.2",
     "jquery": "^3.5.1",
     "jspdf": "^2.1.1",
     "jspdf-autotable": "^3.5.13",
